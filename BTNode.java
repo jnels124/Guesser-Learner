@@ -5,7 +5,11 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class BTNode<T> {
+public class BTNode<T> implements java.io.Serializable { // Bounded to ensure only extended classes are able to instantiate 
+    private BTNode<T> left;
+    private BTNode<T> right;
+    private T value = null;
+    
     /**
      * Default constructor 
      */
@@ -14,35 +18,37 @@ public class BTNode<T> {
     }
     
     public BTNode(T value) {
-        
+        this.value = value;        
     }
     
     public BTNode(T value, BTNode<T> leftChild, BTNode<T> rightChild ) {
-      
+        this.left= leftChild; /// verify this works
+        this.right = rightChild;
+        this.value = value;
     }
     
-    public void setLeftChild() {
-        
+    public void setLeftChild(BTNode<T> left) {
+        this.left = left;
     }
     
-    public void setRightChild() {
-        
+    public void setRightChild(BTNode<T> right) {
+        this.right = right;
     }
     
     public BTNode<T> getLeftChild() {
-        return null;
+        return this.left;
     }
     
     public BTNode<T> getRightChild() {
-        return null;
+        return this.right;
     }
     
     public T getValue() {
-        return null;
+        return this.value;
     }
     
     public void setValue(T value) {
-        
+        this.value = value;        
     }
     
     public String toString() {

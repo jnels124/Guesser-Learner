@@ -7,17 +7,17 @@
  */
 public class ThingNode extends DecisionTreeNode {
     public ThingNode(String thing) {
-        
+        super( );
+        super.setValue(thing);
     }
     
     public String getThing() {
-        return null;
+        return super.getValue();
     
     }
     
     public String toString() {
-        return null;
-    
+        return super.toString();
     }
     
 }
